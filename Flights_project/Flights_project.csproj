@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{26C58191-DA2B-4F0B-992B-11C37D24E4A4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Flights_project</RootNamespace>
+    <AssemblyName>Flights_project</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DAO\AdminDAOMSSQL.cs" />
+    <Compile Include="Facade\AnonymousUserFacade.cs" />
+    <Compile Include="DAO\AirLineDAOMSSQL.cs" />
+    <Compile Include="DAO\CountryDAOMSSQL.cs" />
+    <Compile Include="DAO\CustomerDAOMSSQL.cs" />
+    <Compile Include="DAO\FlightDAOMSSQL.cs" />
+    <Compile Include="DAO\interface\IcustomerDAO.cs" />
+    <Compile Include="DAO\interface\IFlightDAO.cs" />
+    <Compile Include="DAO\interface\ITicketDAO.cs" />
+    <Compile Include="DAO\interface\IAirLineDAO.cs" />
+    <Compile Include="DAO\interface\IcountryDAO.cs" />
+    <Compile Include="DAO\TicketDAOMSSQL.cs" />
+    <Compile Include="Exceptions\DateHasPassedExeption.cs" />
+    <Compile Include="Facade\FacadeBase.cs" />
+    <Compile Include="Facade\IAnonymousUserFacade.cs" />
+    <Compile Include="Facade\ILoggedInAdministratorFacade.cs" />
+    <Compile Include="Facade\ILoggedInAirlineFacade.cs" />
+    <Compile Include="Facade\LoggedInAdministratorFacade.cs" />
+    <Compile Include="Facade\LoggedInAirlineFacade.cs" />
+    <Compile Include="Facade\ILoggedInCustomerFacade.cs" />
+    <Compile Include="Facade\LoggedInCustomerFacade.cs" />
+    <Compile Include="Exceptions\RunOutTicketsExeption.cs" />
+    <Compile Include="LogIn\Administrator.cs" />
+    <Compile Include="LogIn\flightCenterConfig.cs" />
+    <Compile Include="DAO\interface\IBasicDB.cs" />
+    <Compile Include="LogIn\IloginService.cs" />
+    <Compile Include="LogIn\LoginService.cs" />
+    <Compile Include="LogIn\LoginToken.cs" />
+    <Compile Include="Exceptions\WrongPasswordException.cs" />
+    <Compile Include="LogIn\LoginTokenBase.cs" />
+    <Compile Include="POCO\AirlineCompany.cs" />
+    <Compile Include="POCO\Country.cs" />
+    <Compile Include="POCO\Customer.cs" />
+    <Compile Include="POCO\Flights.cs" />
+    <Compile Include="POCO\IPoco.cs" />
+    <Compile Include="POCO\IUser.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="POCO\Ticket.cs" />
+    <Compile Include="SingeltonFlyingCenter\CleaningData.cs" />
+    <Compile Include="SingeltonFlyingCenter\DAOClean.cs" />
+    <Compile Include="SingeltonFlyingCenter\FlyingCenterSystem.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
